@@ -1,0 +1,48 @@
+package type;
+
+public class TypeEx1 {
+	
+	void test() {
+		//test 메소드 선언
+	}
+	void test1() {
+		test();//test 메소드 호출
+	}
+	
+	public static void main(String[] args) {
+		/*
+		 * 	- 자바의 자료형
+		 * 		기본자료형
+		 * 		객체자료형
+		 * 
+		 * 	자바의 기본자료형
+		 * 	- boolean(논리형) : true, false
+		 * 	- char 
+		 *  - byte
+		 *  - short
+		 *  - int
+		 *  - long
+		 *  - float
+		 *  - long
+		 * 
+		 * 	
+		 */
+		
+		// 기본자료형 boolean형 지역변수
+		// b를 선언
+		boolean b;
+		// 지역변수 b에 true를 대입(초기화)
+		b = true;
+		
+//		System.out.println(b);
+		
+		//기본자료형 boolean형 지역변수 a
+		//를 선언하고 false로 초기화
+		boolean a = false;
+		
+		System.out.println(a);
+		
+		
+	} //main() end
+	
+}//TypeEx1 end
