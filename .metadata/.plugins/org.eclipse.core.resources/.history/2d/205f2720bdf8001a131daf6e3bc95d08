@@ -1,8 +1,0 @@
-package type;
-
-public class TypeEx4 {
-	
-	public static void main(String[] args) {
-		
-	}
-}

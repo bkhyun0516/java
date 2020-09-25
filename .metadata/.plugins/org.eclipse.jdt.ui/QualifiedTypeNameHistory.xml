@@ -1,5 +1,18 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="oop.Actor"/>
 <fullyQualifiedTypeName name="java.lang.System"/>
+<fullyQualifiedTypeName name="test.B"/>
+<fullyQualifiedTypeName name="test.MovieApp"/>
+<fullyQualifiedTypeName name="javax.swing.plaf.basic.BasicInternalFrameTitlePane.MoveAction"/>
+<fullyQualifiedTypeName name="vo.Movie"/>
+<fullyQualifiedTypeName name="method.CalculatorApp"/>
+<fullyQualifiedTypeName name="method.Calculator"/>
+<fullyQualifiedTypeName name="text.A"/>
+<fullyQualifiedTypeName name="call.CallByValue"/>
+<fullyQualifiedTypeName name="call.CallByReference"/>
+<fullyQualifiedTypeName name="band.ConTest"/>
+<fullyQualifiedTypeName name="vo.Member"/>
+<fullyQualifiedTypeName name="java.lang.String"/>
 <fullyQualifiedTypeName name="java.util.Scanner"/>
 </qualifiedTypeNameHistroy>
