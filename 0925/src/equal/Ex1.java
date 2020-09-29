@@ -17,5 +17,6 @@ public class Ex1 {
 		System.out.println(a == b);
 		//모든객체에는 equals메서드가 있다.
 		System.out.println(a.equals(b));
+		
 	}
 }
