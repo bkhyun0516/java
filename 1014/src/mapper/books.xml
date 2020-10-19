@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="books">
+<!-- SQL 작성장소 -->
+	<delete id="delete" parameterType="int">
+		DELETE books
+		WHERE NO = #{no}
+	</delete>
+	<insert id="insert" parameterType="vo.Book">
+		INSERT INTO books(no,title,author,page_num,publication_date)
+		VALUES(books_seq.nextval,#{title},#{author},#{pageNum},#{publicationDate})
+	</insert>
+	<update id="update" parameterType="vo.Book">
+	update books
+	SET title = #{title}
+	WHERE no = #{no}
+	</update>
+	
+	<!--
+		#{변수}
+		parameterType 개발자가 mybatis에 넘겨주는 자료형
+		변수의 개수가 많아진다
+		1) 자료형이 모두 같다? : 배열
+		2) 자료형이 다르다?: 객체
+	-->
+
+</mapper>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="idols">
+<!-- SQL 작성장소 -->
+	<delete id="delete">
+		DELETE idols
+		WHERE idol_id = 5
+	</delete>
+	<insert id="insert">
+		INSERT INTO idols(idol_id,name,height,weight,birth_date,gender,group_id) 
+		VALUES(5,'지은',160,48,'1993-05-16','F',1)
+	</insert>
+
+</mapper>

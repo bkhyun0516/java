@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="employees">
+	<select id="selectList" resultType="Employee">
+		SELECT 	employee_id employeeId,
+	   	first_name firstName,
+	   	last_name lastName,
+		email,
+		phone_number phoneNumber,
+		hire_date hireDate,
+		job_id jobId,
+		salary,
+		commission_pct commissionPct,
+		manager_id managerId,
+		department_id departmentId
+		FROM employees
+		ORDER BY 1
+	</select>
+	<select id="selectSearchName" parameterType="string" resultType="Employee">
+		SELECT 	employee_id employeeId,
+	   	first_name firstName,
+	   	last_name lastName,
+		email,
+		phone_number phoneNumber,
+		hire_date hireDate,
+		job_id jobId,
+		salary,
+		commission_pct commissionPct,
+		manager_id managerId,
+		department_id departmentId
+		FROM employees
+		WHERE LOWER(first_name) LIKE #{firstName}
+		ORDER BY 1
+	</select>
+</mapper>

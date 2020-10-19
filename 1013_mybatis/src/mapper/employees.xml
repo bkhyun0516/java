@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="employees">
+<!-- SQL 작성장소 -->
+	
+	<select id="select">
+		SELECT employee_id, first_name, last_name
+		FROM employees
+	</select>
+
+</mapper>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="movies">
+	<select id="selectNameList" resultType="Movie">
+		SELECT no, name
+		FROM movies
+		ORDER BY 1
+	</select>
+	<delete id="delete" parameterType="int">
+		DELETE movies
+		WHERE no = #{no}
+	</delete>
+	<select id="search" parameterType="string" resultType="Movie">
+		SELECT no, name, director, release_date releaseDate, audience_num audienceNum, genre
+		FROM movies
+		WHERE LOWER(name) LIKE #{word}
+		ORDER BY 1
+	</select>
+	<insert id="insert" parameterType="Movie">
+		INSERT INTO movies(no, name, director, release_date, end_date, audience_num, genre)
+		VALUES(movies_seq.nextval,#{name},#{director},#{releaseDate},#{endDate},#{audienceNum} ,#{genre})
+	</insert>
+</mapper>

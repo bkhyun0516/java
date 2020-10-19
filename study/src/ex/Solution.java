@@ -1,60 +1,45 @@
 package ex;
+
+import java.util.LinkedList;
+import java.util.Queue;
+import java.util.Vector;
+
 class Solution {
-	 public double[] solution(int N, int[] stages) {
-	        int[] answer = new int[N];
-	        double[] failRate = new double[N];
-	        for(int i=1;i<=N ;i++){
-	            answer[i-1] = i;
-	        }//1~N 배열 생성
-	        int[][] proc = new int[N][2];
-	        int size=stages.length;
-	        
-	        
-	        for(int i =0; i<size; i++){
-	            if(stages[i]==N+1){
-	                proc[N-1][1]++;
-	                stages[i]=N;
-	            }
-	            for(int j=0; j<stages[i];j++){
-	                proc[j][0]++;
-	                proc[j][1]++;
-	            }
-	            proc[stages[i]-1][1]--;
-	        }
-	        for(int i=0; i<N;i++){
-	           System.out.println();
-	           System.out.println(proc[i][0]);
-	           System.out.println(proc[i][1]);
-	           System.out.println();
-	        }
-	        
-	        for(int i=0; i<N;i++){
-	            if(proc[i][0]==0){
-	                failRate[i]=0;
-	            }
-	            else{
-	                failRate[i]=(double)proc[i][1]/proc[i][0];
-	            }
-	        }
-	        for(int i=0; i<N;i++){
-	           for(int j=i ; j<N;j++){
-	               if(failRate[answer[i]-1]<=failRate[answer[j]-1] && answer[i]<answer[j]){
-	                   int tmp = answer[i];
-	                   answer[i] = answer[j];
-	                   answer[j] = tmp;
-	               }  
-	           }
-	        }
-	        
-	        return failRate;
-	 }
-	 public static void main(String[] args) {
-		Solution sol = new Solution();
-		int[] stages= {4, 4, 4, 4, 4};
-		double[] d = sol.solution(4,stages);
-		for(int i=0; i<d.length;i++) {
-			System.out.println(d[i]);
+    public Vector<Integer> sort(int n,Vector<Integer> v){
+    	for(int i=0; i<n; i++) {
+    		for(int j=i; j<n; j++) {
+    			int a = v.elementAt(i);
+    			if(v.elementAt(i)<v.elementAt(j)) {
+    				Integer tmp= v.elementAt(i);
+    				v.setElementAt(v.elementAt(j), i);
+    				v.setElementAt(tmp, j);
+    			}	
+    		}
+    	}
+    	return v;
+    }
+    public int solution(int bridge_length, int weight, int[] truck_weights) {
+        Vector<Integer> v = new Vector<Integer>();
+     	Queue<Integer> q = new LinkedList<Integer>();
+        int answer = 0;
+        int numberOfTruck = truck_weights.length;
+        for(int i=0;i < numberOfTruck; i++){
+            v.add(truck_weights[i]);
+        }
+        sort(numberOfTruck,v);
+        for (int i = 0; i < truck_weights.length; i++) {
+        	System.out.print(v.elementAt(i));
 		}
+        while(!v.isEmpty()) {
+        	break;
+        }
+        return answer;
+    }
+    public static void main(String[] args) {
+		Solution s = new Solution();
+		int[] a = {123,24,223,2,1};
+    	int t = s.solution(10, 10, a);
+    	System.out.println(t);
 	}
 	
 }
