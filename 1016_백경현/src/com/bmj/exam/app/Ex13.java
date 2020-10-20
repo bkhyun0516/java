@@ -27,7 +27,7 @@ public class Ex13 {
 				System.out.println( movie.getNo() +")   "+ movie.getName() +
 									" / 감독 : " + movie.getDirector()+
 									" / 개봉일 : " + format.format(movie.getReleaseDate()) +
-									" / 관객수 : " + format1.format((long)movie.getAudienceNum()) +
+									" / 관객수 : " + format1.format(movie.getAudienceNum()) +
 									" / 장르 : " + movie.getGenre());
 			}//for end
 		}

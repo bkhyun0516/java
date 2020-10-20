@@ -1,9 +1,10 @@
 package ex;
 
 public class Ex42 {
+	int max = 0;
 	public int Search(int n, int left,int right,int[] lines) {
-		if(left==right)
-			return left;
+		if(left>=right)
+			return max;
 		int mid = (left+right)/2;
 		int numberOfLine = check(mid,lines);
 		System.out.println("왼쪽"+left +" 오른쪽 "+ right);
@@ -13,7 +14,9 @@ public class Ex42 {
 			return Search(n,left,mid-1,lines);
 		}
 		else if(numberOfLine == n) {//기준치일때 길이 늘려본다.
-			return Search(n,mid,right,lines);
+			
+			max = max(mid,max);
+			return Search(n,mid+1,right,lines);
 		}
 		else{//기준보다 많이 만들어 졌을 때 길이 늘림
 			return Search(n,mid+1,right,lines);
